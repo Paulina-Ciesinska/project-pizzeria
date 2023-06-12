@@ -212,6 +212,40 @@
       "deliveryFee": {},
       "products": [],
       "id": 1
+    },
+    {
+      "address": "test2@gmail.com",
+      "phone": "987654321",
+      "totalPrice": 38,
+      "subtotalPrice": 18,
+      "totalNumber": 2,
+      "deliveryFee": {},
+      "products": [
+        {
+          "id": "cake",
+          "name": "Zio Stefano's Doughnut",
+          "amount": 1,
+          "priceSingle": 9,
+          "price": 9,
+          "params": {}
+        },
+        {
+          "id": "breakfast",
+          "name": "Zia Giulia's Breakfast",
+          "amount": 1,
+          "priceSingle": 9,
+          "price": 9,
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "latte": "Latte"
+              }
+            }
+          }
+        }
+      ],
+      "id": 2
     }
   ]
 }

@@ -527,10 +527,11 @@ return params;
 
       sendOrder() {
         const thisCart = this;
+    
         const url = settings.db.url + '/' + settings.db.orders;
-
+    
         const payload = {
-  
+    
           address: thisCart.dom.address.value,
           phone: thisCart.dom.phone.value,
           totalPrice: thisCart.totalPrice,
@@ -538,25 +539,28 @@ return params;
           totalNumber: thisCart.totalNumber,
           deliveryFee: thisCart.dom.deliveryFee,
           products: [],
+    
+        };
+    
+        for(let prod of thisCart.products) {
+          payload.products.push(prod.getData());
+        }
+    
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        };
+        
+        fetch(url, options);
+    
       }
-
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      };
-      
-      fetch(url, options);
-
-      for(let prod of thisCart.products) {
-        payload.products.push(prod.getData());
-      }
-
+  
+  
     }
-
-  }
+  
   
     class CartProduct {
       constructor(menuProduct, element){
