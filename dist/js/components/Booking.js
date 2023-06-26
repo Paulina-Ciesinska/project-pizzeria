@@ -31,10 +31,10 @@ class Booking {
         const thisBooking = this;
 
         thisBooking.peopleAmount = new AmountWidget(thisBooking.dom.peopleAmount);
-        thisBooking.dom.peopleAmount.addEventListener();
-        
+        thisBooking.dom.peopleAmount.addEventListener('updated', function () {});
+    
         thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
-        thisBooking.dom.hoursAmount.addEventListener();
+        thisBooking.dom.hoursAmount.addEventListener('updated', function () {});
     }
 }
 
